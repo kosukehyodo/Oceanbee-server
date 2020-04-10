@@ -1,0 +1,58 @@
+
+version: "3.7"
+
+services:
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: oceanbee-nginx
+    links:
+      - app:app
+    ports:
+      - 80:80
+    volumes:
+      - ./public:/app/oceanbee/public
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+  app:
+    build: .
+    container_name: oceanbee-app
+    working_dir: /app/oceanbee
+    volumes:
+      - .:/app/oceanbee
+    ports:
+      - 9000:9000
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=oceanbee_db
+      - MYSQL_ROOT_PASSWORD=root
+    container_name: oceanbee-mysql
+
+  redis:
+    image: redis:5.0.5-alpine
+    container_name: oceanbee-redis
+    ports:
+      - 6379:6379
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: oceanbee-phpmyadmin
+    links:
+      - mysql:mysql
+    ports:
+      - 8080:80
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - PMA_HOST=mysql
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    container_name: oceanbee-mailcatcher
+    ports:
+      - 1080:1080
