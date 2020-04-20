@@ -1,2 +1,9 @@
+// foundation
+@import "foundation/reset.scss";
+
 // header
 @import "layout/l-header.scss";
+@import "layout/l-footer.scss";
+
+//project
+@import "object/project/top/index.scss"

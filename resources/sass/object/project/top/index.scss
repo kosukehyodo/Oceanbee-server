@@ -1,0 +1,16 @@
+.p-top {
+    &__img {
+        background-color: yellow;
+        height: 250px;
+    }
+
+    &__map {
+        background-color: blue;
+        height: 500px;
+    }
+
+    &__introduction {
+        background-color: green;
+        height: 300px;
+    }
+}

@@ -13,7 +13,12 @@
 
 <body>
     @include('common.header')
-    
+    <main class="main-content">
+        <div id="app">
+            @yield('content')
+        </div>
+    </main>
+    @include('common.footer')
 </body>
 
 </html>
