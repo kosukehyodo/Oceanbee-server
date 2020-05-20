@@ -1,5 +1,41 @@
-.header-content {
+.l-header-content {
     width: 100%;
-    height: 120px;
-    background-color: red;
+    height: 100px;
+
+    &__logo {
+        text-decoration: none;
+
+        span {
+            display: inline-block;
+            color: $main_color;
+            font-weight: $base_font_weight;
+            font-style: italic;
+            font-size: $logo_size;
+            margin: 15px 50px;
+        }
+    }
+
+    &__search_box {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-block;
+        border: 1px solid #999;
+        padding: 3px 10px;
+        border-radius: 20px;
+        height: 2.3em;
+        width: 265px;
+
+    
+    }
+
+    &__box-down {
+        div {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &__category {
+        margin-right: auto;
+    }
 }

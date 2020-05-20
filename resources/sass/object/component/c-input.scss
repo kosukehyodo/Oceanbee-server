@@ -1,0 +1,7 @@
+.c-input-frame {
+    border: none;
+    
+    &:focus {
+        outline: 0;
+    }
+}
