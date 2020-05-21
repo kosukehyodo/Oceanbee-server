@@ -25,6 +25,9 @@
             "Explorer 11",
             "iOS 9.0",
             "Android 4.1"
-        ]
+        ],
+        "@fortawesome/fontawesome-free": "^5.13.0",
+        "fibers": "^3.1.0",
+        "node-sass": "^4.14.1"
     }
 }

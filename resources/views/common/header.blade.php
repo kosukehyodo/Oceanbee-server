@@ -7,7 +7,9 @@
             </a>
             <form action="#" class="l-header-content__search_box">
                 <input type="text" class="c-input-frame" placeholder="キーワードを入力" />
-                <input type="submit" class="c-search-button" value="検索" />
+                <button type='submit' class="c-search-button" value=''>
+                    <i class="fas fa-search"></i>
+                </button>
             </form>
             <!-- <ul class="menu__second-level">
                 <li>

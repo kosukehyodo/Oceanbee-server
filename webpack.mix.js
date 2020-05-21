@@ -18,4 +18,8 @@ mix.sass("resources/sass/app.scss", "public/css")
     .options({
         processCssUrls: false,
         postCss: [require("autoprefixer")()]
-    });
+    })
+    .copy(
+        "node_modules/@fortawesome/fontawesome-free/webfonts",
+        "public/webfonts"
+    );
