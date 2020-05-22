@@ -1,13 +1,11 @@
 .c-search-button {
     cursor: pointer;
-    font-family: FontAwesome;
     font-size: 1.3em;
     border: none;
     background: none;
-    color: #3879d9;
+    color: $main_color;
     position: absolute;
     height: 2.5em;
     right: 0;
     top: -10px;
-    outline: none;
 }

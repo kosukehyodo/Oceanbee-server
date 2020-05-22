@@ -1,6 +1,13 @@
 .l-header-content {
-    width: 100%;
+    width: 85%;
     height: 100px;
+    margin: 0 auto;
+
+    &__box-up {
+        div {
+            display: flex;
+        }
+    }
 
     &__logo {
         text-decoration: none;
@@ -18,12 +25,12 @@
     &__search_box {
         box-sizing: border-box;
         position: relative;
-        display: inline-block;
         border: 1px solid #999;
         padding: 3px 10px;
         border-radius: 20px;
         height: 2.3em;
-        width: 265px;
+        width: 35%;
+        margin-top: 20px;
     }
 
     &__box-down {
@@ -34,6 +41,17 @@
     }
 
     &__category {
-        margin-right: auto;
+        flex-basis: 80%;
+    
+    }
+
+    &__registration {
+        
+        flex-basis: 8%;
+    }
+
+    &__login {
+        
+        flex-basis: 8%;
     }
 }
