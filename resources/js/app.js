@@ -6,6 +6,7 @@
 
 require('./bootstrap');
 
+// 画像自動スクロール
 require('./slider');
 
 window.Vue = require('vue');

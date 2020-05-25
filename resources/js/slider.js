@@ -1,7 +1,7 @@
-$(function () {
+$(function() {
     var setImg = "#js-top-img";
     var fadeSpeed = 1600;
-    var switchDelay = 5000;
+    var switchDelay = 8000;
 
     $(setImg)
         .children("img")

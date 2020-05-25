@@ -1,16 +1,17 @@
 .p-top {
     &__img {
-        width: 500px;
+        max-width: 1000px;
         height: 300px;
         margin: 0 auto;
-        text-align: left;
         overflow: hidden;
         position: relative;
+        margin-top: 30px;
 
         img {
             top: 0;
             left: 0;
             position: absolute;
+            border-radius: 15px;
         }
     }
 

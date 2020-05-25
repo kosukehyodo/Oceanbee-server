@@ -2,6 +2,9 @@
 @import "foundation/reset.scss";
 @import "foundation/base.scss";
 
+// Variables
+@import 'variables';
+
 // layout
 @import "layout/l-header.scss";
 @import "layout/l-footer.scss";
@@ -19,10 +22,6 @@
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
