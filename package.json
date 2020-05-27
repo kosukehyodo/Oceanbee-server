@@ -24,14 +24,15 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.13.0",
         "browserslist": [
             "last 2 versions",
             "Explorer 11",
             "iOS 9.0",
             "Android 4.1"
         ],
-        "@fortawesome/fontawesome-free": "^5.13.0",
         "fibers": "^3.1.0",
+        "japan-map-js": "^1.0.1",
         "node-sass": "^4.14.1"
     }
 }

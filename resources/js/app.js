@@ -9,6 +9,9 @@ require('./bootstrap');
 // 画像自動スクロール
 require('./slider');
 
+// 地図
+require('./map')
+
 window.Vue = require('vue');
 
 /**
