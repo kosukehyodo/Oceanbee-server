@@ -17,6 +17,20 @@
 
     &__map {
         height: 500px;
+
+        span {
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            font-weight: $base_font_weight;
+            color: $accent_color;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        &-img {
+            text-align: center;
+        }
     }
 
     &__introduction {

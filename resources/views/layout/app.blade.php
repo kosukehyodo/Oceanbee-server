@@ -20,13 +20,7 @@
     </main>
     @include('common.footer')
     <script src="{{ mix('/js/app.js') }}"></script>
-    <!-- <script type="text/javascript">
-    var d = new jpmap.japanMap(document.getElementById("my-map"), {
-    onSelect: function(data){
-      alert(data.name);
-  }
-});
-</script> -->
+<script src="/path/to/jquery.japan-map.js"></script>
 
 </body>
 
