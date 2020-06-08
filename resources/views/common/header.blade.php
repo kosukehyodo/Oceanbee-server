@@ -37,8 +37,8 @@
         <li class="l-header-content__box-down">
             <div>
                 <a href="#" class="l-header-content__category c-link">カテゴリーから探す</a>
-                <a href="#" class="l-header-content__registration c-link">新規登録</a>
-                <a href="#" class="l-header-content__login c-link">ログイン</a>
+                <a href="{{ route('register')}}" class="l-header-content__registration c-link">新規登録</a>
+                <a href="{{ route('login') }}" class="l-header-content__login c-link">ログイン</a>
             </div>
         </li>
     </ul>

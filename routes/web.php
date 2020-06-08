@@ -13,4 +13,4 @@
 
 Route::resource('/', 'TopController');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
