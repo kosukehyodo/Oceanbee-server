@@ -6,12 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
-
-
+use App\Services\RegistrationService;
 
 class RegisterController extends Controller
 {
@@ -40,9 +38,20 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(RegistrationService $registration_service)
     {
+        $this->registration_service = $registration_service;
         $this->middleware('guest');
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        return view('project.pre_register.index');
     }
 
     /**
@@ -68,18 +77,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            // 'name' => $data['name'],
-            'email' => $data['email'],
-            // 'password' => Hash::make($data['password']),
-        ]);
+       $this->registration_service->create($data);
     }
 
-    public function register(Request $request)
+    public function Preregister(Request $request)
     {
         // createメソッドを読んで、ユーザ生成する
         event(new Registered($user = $this->create($request->all())));
         // メール送ったから、クリックしろ画面を表示
-        return redirect('/');
+        return view('project.pre_register.complete');
     }
 }

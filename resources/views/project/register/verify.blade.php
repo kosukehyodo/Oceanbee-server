@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -25,4 +25,7 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection -->
+
+以下のURLからログインして、本登録を完了させてください。<br>
+{{url('register/verify/'.$token)}}
