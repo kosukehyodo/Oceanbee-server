@@ -1,4 +1,4 @@
-.p-register {
+.p-pre-register {
     padding: 100px 300px;
 
     &__frame {
@@ -11,11 +11,16 @@
             display: inline-block;
             width: 100%;
             text-align: center;
+        }
 
-            h2 {
-                color: #000000;
-                font-weight: $base_font_weight;
-            }
+        span {
+            font-weight: $base_font_weight;
+            color: $accent_color;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin-top: 40px;
+            font-size: 1.1rem;
         }
     }
 
@@ -32,7 +37,7 @@
     &__email {
         span {
             display: inline-block;
-            margin: 20px;
+            margin: 20px 0;
             color: $accent_color;
             font-weight: $base_font_weight;
         }
@@ -40,10 +45,21 @@
             border-radius: 4px;
             background-color: $base_color;
             display: block;
-            width:300px;
-            height: 40px;
+            width: 360px;
+            height: 45px;
             padding: 10px;
             margin: 0 auto;
         }
+
+        button {
+            margin-top: 30px;
+        }
+    }
+
+    &__back {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 90px;
     }
 }

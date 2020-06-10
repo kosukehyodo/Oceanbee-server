@@ -87,7 +87,7 @@ class RegisterController extends Controller
      */
     public function Preregister(Request $request)
     {
-        event(new Registered($user = $this->create($request->all())));
+        event(new Registered($this->create($request->all())));
 
         return view('project.pre_register.complete');
     }

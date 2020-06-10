@@ -13,15 +13,14 @@
     }
 }
 
-.c-register-button {
+.c-button {
     cursor: pointer;
     color: $base-color;
     border-radius: 15px;
     background-color: $main_color;
-    margin-top: 30px;
+    font-weight: $base_font_weight;
     width: 160px;
     height: 40px;
-    font-weight: $base_font_weight;
 
     &:focus {
         outline: 0;

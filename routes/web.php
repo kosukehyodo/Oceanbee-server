@@ -18,7 +18,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@Preregister')->name('pre_register');
+Route::post('register/send_mail', 'Auth\RegisterController@Preregister')->name('pre_register');
 Route::get('register/verify', 'Auth\RegisterController@verify');
 
 
