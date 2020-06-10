@@ -77,14 +77,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-       $this->registration_service->create($data);
+        $this->registration_service->create($data);
     }
 
+    /**
+     * 仮登録
+     * @param Request $request
+     * @return view
+     */
     public function Preregister(Request $request)
     {
-        // createメソッドを読んで、ユーザ生成する
         event(new Registered($user = $this->create($request->all())));
-        // メール送ったから、クリックしろ画面を表示
+
         return view('project.pre_register.complete');
+    }
+
+    /**
+     * メール認証
+     *
+     * @param  mixed $token
+     * @return view
+     */
+    public function verify(Request $request)
+    {
+        $token = $request->input('token');
+        $this->registration_service->verify($token);
+
+        return view('project.register.index');
     }
 }

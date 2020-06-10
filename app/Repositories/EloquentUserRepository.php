@@ -10,17 +10,22 @@ use App\Repositories\Contract\UserContract;
 
 class EloquentUserRepository implements UserContract
 {
-    public function __construct()
+    public function __construct(User $user)
     {
-        
+        $this->user = $user;
     }
 
     public function create(array $data)
     {
        return User::create([
             'email' => $data['email'],
-            'email_verify_token' => Hash::make(Str::random(30)),
+            'email_verify_token' => Hash::make(Str::uuid()),
         ]);
 
+    }
+
+    public function first(string $token)
+    {
+        return $this->user->where('email_verify_token', $token)->first();
     }
 }
