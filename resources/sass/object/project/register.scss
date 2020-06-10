@@ -1,0 +1,49 @@
+.p-register {
+    padding: 100px 300px;
+
+    &__frame {
+        background-color: #ffffff;
+        height: 500px;
+        padding: 100px;
+        border-radius: 7px;
+
+        form {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+
+            h2 {
+                color: #000000;
+                font-weight: $base_font_weight;
+            }
+        }
+    }
+
+    &__sns-account {
+        margin-top: 20px;
+        span {
+            display: block;
+            color: $accent_color;
+            font-weight: $base_font_weight;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__email {
+        span {
+            display: inline-block;
+            margin: 20px;
+            color: $accent_color;
+            font-weight: $base_font_weight;
+        }
+        input {
+            border-radius: 4px;
+            background-color: $base_color;
+            display: block;
+            width:300px;
+            height: 40px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+    }
+}

@@ -12,16 +12,16 @@
 </head>
 
 <body>
-    @include('common.header')
-    <main class="main-content">
-        <div id="app">
-            @yield('content')
-        </div>
-    </main>
-    @include('common.footer')
+    <div class="content">
+        @include('common.header')
+        <main class="main-content">
+            <div id="app">
+                @yield('content')
+            </div>
+        </main>
+        @include('common.footer')
+    </div>
     <script src="{{ mix('/js/app.js') }}"></script>
-<script src="/path/to/jquery.japan-map.js"></script>
-
 </body>
 
 </html>

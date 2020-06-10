@@ -10,7 +10,7 @@ require('./bootstrap');
 require('./slider');
 
 // 地図
-require('./map')
+// require('./map')
 
 window.Vue = require('vue');
 

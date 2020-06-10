@@ -1,5 +1,22 @@
+.content {
+    min-height: 100vh;
+    position: relative;
+}
+
 .footer-content {
     width: 100%;
     height: 120px;
-    background-color: red;
+    position: absolute;
+    bottom: 0;
+
+    span {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        color: $main_color;
+        font-weight: $base_font_weight;
+        font-style: italic;
+        font-size: $logo_size;
+        padding: 20px;
+    }
 }
