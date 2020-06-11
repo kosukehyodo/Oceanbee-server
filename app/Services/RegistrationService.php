@@ -5,9 +5,16 @@ namespace App\Services;
 use Illuminate\Support\Facades\Mail;
 use App\Repositories\Contract\UserContract;
 use App\Mail\EmailVerification;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class RegistrationService
 {
+    use AuthenticatesUsers; 
+
     public function __construct(
         UserContract $user_contract
     ) {
@@ -52,4 +59,41 @@ class RegistrationService
             // todo::エラーハンドリング
         }
     }
+    
+    /**
+     * 本登録
+     *
+     * @param  array $data
+     * @param  Request $request
+     * @return void
+     */
+    public function register(array $data, Request $request)
+    {
+        $user = $this->user->first($data['email_verify_token']);
+
+        try {
+            $user->name = $data['name'];
+            $user->password = Hash::make($data['password']);
+            $user->status = config('user.status.register');
+            $user->save();
+
+            $this->login($user, $request);
+        } catch (\Exception $e) {
+            // todo::エラーハンドリング
+        }
+    }
+    
+    /**
+     * ログイン
+     *
+     * @param  User $user
+     * @param  Request $request
+     * @return void
+     */
+    private function login(User $user, Request $request)
+    {
+        $request->merge(['email' => $user->email]);
+        $this->attemptLogin($request);
+    }
+    
 }

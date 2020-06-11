@@ -17,7 +17,8 @@
                     <input type="password" name="password" class="c-input" placeholder="6文字以上の半角英数字">
                 </li>
                 <li>
-                    <input type="submit" name="button" class="c-button" value="登録する">
+                    <input type="hidden" name="email_verify_token" value="{{ Request::input('token') }}">
+                    <input type="submit" class="c-button" value="登録する/ログインする">
                 </li>
             </ul>
         </form>

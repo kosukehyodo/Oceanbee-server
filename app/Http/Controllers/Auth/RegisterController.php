@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use App\Services\RegistrationService;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class RegisterController extends Controller
 {
@@ -104,5 +105,11 @@ class RegisterController extends Controller
         $this->registration_service->verify($token);
 
         return view('project.register.index');
+    }
+
+    public function register(Request $request)
+    {
+        $this->registration_service->register($request->all(), $request);
+
     }
 }

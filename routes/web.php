@@ -17,9 +17,10 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('register/send_mail', 'Auth\RegisterController@Preregister')->name('pre_register');
 Route::get('register/verify', 'Auth\RegisterController@verify');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
 
 
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');

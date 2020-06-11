@@ -15,7 +15,7 @@
             margin-top: 15px;
             text-align: center;
         }
-        
+
         label {
             color: $accent_color;
             font-weight: $base_font_weight;
@@ -29,6 +29,7 @@
 
         input[type="submit"] {
             margin-top: 20px;
+            width: 200px;
         }
     }
 }

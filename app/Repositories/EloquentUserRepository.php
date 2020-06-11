@@ -17,7 +17,7 @@ class EloquentUserRepository implements UserContract
 
     public function create(array $data)
     {
-       return User::create([
+       return $this->user->firstOrCreate([
             'email' => $data['email'],
             'email_verify_token' => Hash::make(Str::uuid()),
         ]);
