@@ -1,6 +1,8 @@
 .c-input {
     border: none;
-    
+    border-radius: 4px;
+    background-color: $base_color;
+
     &:focus {
         outline: 0;
     }
