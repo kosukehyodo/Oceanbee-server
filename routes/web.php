@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,14 +24,16 @@ Route::get('register/verify', 'Auth\RegisterController@verify');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 
 
-Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+// Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+// Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+// Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+// Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+// Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+// Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::resource('mypage', 'MypageController', ['only' => ['index']]);
+Route::middleware('auth')->group(function () {
+    Route::resource('mypage', 'MypageController', ['only' => ['index']]);
+});
