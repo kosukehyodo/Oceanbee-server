@@ -106,10 +106,17 @@ class RegisterController extends Controller
 
         return view('project.register.index');
     }
-
+    
+    /**
+     * 本登録
+     *
+     * @param  Request $request
+     * @return redirect
+     */
     public function register(Request $request)
     {
         $this->registration_service->register($request->all(), $request);
-
+        
+        return redirect('mypage');
     }
 }

@@ -1,0 +1,36 @@
+.p-login {
+    padding: 100px 300px;
+
+    &__frame {
+        background-color: #ffffff;
+        height: 500px;
+        padding: 100px;
+        border-radius: 7px;
+    }
+
+    &__list {
+        margin-top: 25px;
+
+        li {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        label {
+            color: $accent_color;
+            font-weight: $base_font_weight;
+            margin-right: 10px;
+            width: 100px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 250px;
+            padding: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 25px;
+            width: 200px;
+        }
+    }
+}
