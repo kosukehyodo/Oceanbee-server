@@ -8,6 +8,7 @@
 // layout
 @import "layout/l-header.scss";
 @import "layout/l-footer.scss";
+@import "layout/l-sidebar.scss";
 
 // component(再利用可能)
 @import "object/component/c-breadcrumb.scss";
@@ -18,6 +19,7 @@
 
 //project
 @import "object/project/top/index.scss";
+@import "object/project/mypage/index.scss";
 @import "object/project/pre-register.scss";
 @import "object/project/register.scss";
 @import "object/project/login.scss";

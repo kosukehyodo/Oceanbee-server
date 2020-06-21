@@ -3,5 +3,9 @@
 @endsection
 @section('content')
 {{ Breadcrumbs::render('mypage') }}
+<div class="p-mypage">
+    @include('common.sidebar')
+    <div class="p-mypage__main">メインコンテンツ</div>
+</div>
 
 @endsection
