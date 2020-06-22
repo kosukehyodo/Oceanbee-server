@@ -14,7 +14,7 @@
 <body>
     <div class="content">
         @include('common.header')
-        <main class="main-content">
+        <main class="l-main-content">
             <div id="app">
                 @yield('content')
             </div>
