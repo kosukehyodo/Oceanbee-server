@@ -16,10 +16,10 @@
             <div class="p-plan-create__photo">
                 <h4>写真を掲載</h4>
                 <p>スマホやカメラを使って写真を撮りましょう。1枚以上の写真が必要です。</p>
-                <input type="file" name="photo">
+                <input type="file" name="photo[]" id="js-photo" accept="image/*" multiple>
+                <div id="js-img__output"></div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

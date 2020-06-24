@@ -1,0 +1,26 @@
+.js-img {
+    display: inline-block;
+    margin-right: 18px;
+
+    &__content {
+        width: 250px;
+        height: 180px;
+    }
+
+    &__desc {
+        display: block;
+        resize: none;
+        padding: 15px;
+        line-height: 1.1;
+        height: 45px;
+        width: 82%;
+        margin: 0 auto;
+        border: none;
+    }
+
+    &__desc:focus {
+        outline: 0;
+    }
+
+    
+}

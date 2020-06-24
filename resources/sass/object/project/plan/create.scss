@@ -19,7 +19,7 @@
 
     &__title, &__photo {
         margin-bottom: 25px;
-        
+
         h4 {
             color: #000000;
             font-weight: $base_font_weight;
@@ -37,5 +37,9 @@
             height: 50px;
             padding: 5px 15px;
         }
+    }
+
+    &__myImage {
+        margin-top: 25px;
     }
 }

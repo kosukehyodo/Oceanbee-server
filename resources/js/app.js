@@ -9,6 +9,8 @@ require('./bootstrap');
 // 画像自動スクロール
 require('./slider');
 
+require('./image')
+
 // 地図
 // require('./map')
 
