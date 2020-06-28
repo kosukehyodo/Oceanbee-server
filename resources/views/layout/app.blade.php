@@ -8,7 +8,11 @@
     <title>@yield('title')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="">
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"
+        charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript"
+        charset="utf-8"></script>
 </head>
 
 <body>
@@ -21,7 +25,6 @@
         </main>
         @include('common.footer')
     </div>
-    <script src="{{ mix('/js/app.js') }}"></script>
+    <script src="{{ asset('/js/app.js') }}"></script>
 </body>
-
 </html>

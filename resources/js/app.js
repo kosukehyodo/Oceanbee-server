@@ -9,7 +9,15 @@ require('./bootstrap');
 // 画像自動スクロール
 require('./slider');
 
+// input image
 require('./image')
+
+// require('jquery-ui');
+
+// npmで入れたtag-it.jsがmodule化(export defaultしていない)されていないため、手動で作成したファイルで読み込ませる
+require('./tag')
+
+
 
 // 地図
 // require('./map')

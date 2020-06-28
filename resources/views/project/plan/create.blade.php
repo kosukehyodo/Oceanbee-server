@@ -19,6 +19,9 @@
                 <input type="file" name="photo[]" id="js-photo" accept="image/*" multiple>
                 <div id="js-img__output"></div>
             </div>
+            <ul id="myTags">
+    
+            </ul>
         </div>
     </div>
 </div>
