@@ -19,10 +19,24 @@
                 <input type="file" name="photo[]" id="js-photo" accept="image/*" multiple>
                 <div id="js-img__output"></div>
             </div>
-            <ul id="myTags">
-    
-            </ul>
+            <div class="search-area-colum form-contents">
+                　<ul id="myTags" value="tags" name="tags"></ul>
+                　　</div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('bodyScript')
+<!-- todo::モジュール化して外部ファイルで呼び出したい（できなくて諦めた） -->
+<script type="text/javascript">
+    $(function() {
+
+        $("#myTags").tagit({
+                    singleField: true,
+                  //自動補完するワードを設定
+                    availableTags: ['php', 'ruby', 'react', 'reactNative', 'laravel']
+                });
+    });
+</script>
 @endsection

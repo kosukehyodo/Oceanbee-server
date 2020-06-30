@@ -8,6 +8,7 @@ window._ = require('lodash');
 
 try {
     window.Popper = require('popper.js').default;
+    // CDNで読み込みしているためコメントアウト(モジュール化してtag-itが呼べなかったため)
     // window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');

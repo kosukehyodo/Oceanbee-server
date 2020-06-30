@@ -12,10 +12,10 @@ require('./slider');
 // input image
 require('./image')
 
-// require('jquery-ui');
+// require('tag-it/css/jquery.tagit.css');
 
-// npmで入れたtag-it.jsがmodule化(export defaultしていない)されていないため、手動で作成したファイルで読み込ませる
-require('./tag')
+require('./tag');
+
 
 
 

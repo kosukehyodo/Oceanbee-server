@@ -121,7 +121,7 @@
                 this.options.singleFieldNode = this.element;
                 this.element.addClass('tagit-hidden-field');
             } else {
-                this.tagList = this.element.find('ul, ol').andSelf().last();
+                this.tagList = this.element.find('ul, ol').addBack().last();
             }
 
             this.tagInput = $('<input type="text" />').addClass('ui-widget-content');
@@ -587,14 +587,5 @@
         }
 
     });
-
-    
-    $("#myTags").tagit({
-        singleField: true,
-        //自動補完するワードを設定
-        availableTags: ["php", "ruby", "react", "reactNative", "laravel"]
-    });
-
 })(jQuery);
-
 

@@ -9,10 +9,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"
-        charset="utf-8"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript"
-        charset="utf-8"></script>
+    <!-- todo::JqueryをCDNで読み込んでいる -->
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
 </head>
 
 <body>
@@ -26,5 +28,7 @@
         @include('common.footer')
     </div>
     <script src="{{ asset('/js/app.js') }}"></script>
+    @yield('bodyScript')
 </body>
+
 </html>
