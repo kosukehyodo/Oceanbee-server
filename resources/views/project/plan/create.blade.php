@@ -19,8 +19,31 @@
                 <input type="file" name="photo[]" id="js-photo" accept="image/*" multiple>
                 <div id="js-img__output"></div>
             </div>
-            <div class="search-area-colum form-contents">
-                <ul id="myTags" value="tags" name="tags"></ul>
+            <h4 class="p-plan-create__tag-title">ハッシュタグ</h4>
+            <ul id="myTags" value="tags" name="tags"></ul>
+            <div class="p-plan-create__body">
+                <h4>プラン内容</h4>
+                <p>提供できる内容を記載しましょう。2000文字以内。</p>
+                <textarea name="notes" rows="20" class="c-input"
+                    placeholder="etc はじまして！&#13;&#10;サーフィン教えます。"></textarea>
+            </div>
+            <div class="p-plan-create__price">
+                <h4>価格</h4>
+                <select required>
+                    <option value="1">単発</option>
+                    <option value="2">月額</option>
+                    <option value="3">年額</option>
+                </select>
+                <input type="text" name="price" class="c-input" placeholder="10,000">円
+            </div>
+            <div class="p-plan-create__address">
+                <h4>場所</h4>
+                <select required>
+                    @foreach(config('prefecture') as $key => $area)
+                    <option value="{{ $key }}">{{ $area }}</option>
+                    @endforeach
+                </select>
+                <input type="text" name="address" class="c-input" placeholder="江ノ島水族館付近">
             </div>
         </div>
     </div>
@@ -32,10 +55,10 @@
 <script type="text/javascript">
     $(function() {
         $("#myTags").tagit({
-                    singleField: true,
-                  //自動補完するワードを設定
-                    availableTags: ['php', 'ruby', 'react', 'reactNative', 'laravel']
-                });
+            singleField: true,
+            //自動補完するワードを設定
+            availableTags: ['php', 'ruby', 'react', 'reactNative', 'laravel']
+        });
     });
 </script>
 @endsection

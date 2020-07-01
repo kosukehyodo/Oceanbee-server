@@ -11,9 +11,7 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <!-- todo::JqueryをCDNで読み込んでいる -->
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-
 </head>
 
 <body>

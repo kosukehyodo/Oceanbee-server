@@ -5,6 +5,7 @@ ul.tagit {
 
   /* usually we don't want the regular ul margins. */
   margin-right: inherit;
+  margin-bottom: 25px;
 
   li {
     display: block;
@@ -33,7 +34,7 @@ ul.tagit {
     }
 
     &.tagit-new {
-      padding: .25em 4px .25em 0;
+      padding: .25em 6px .25em 6px;
     }
 
     &.tagit-choice {
