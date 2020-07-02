@@ -33,6 +33,7 @@
             "Android 4.1"
         ],
         "fibers": "^3.1.0",
+        "flatpickr": "^4.6.3",
         "japan-map-js": "^1.0.1",
         "node-sass": "^4.14.1",
         "tag-it": "^2.0.0"

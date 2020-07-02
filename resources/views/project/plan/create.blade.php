@@ -45,6 +45,8 @@
                 </select>
                 <input type="text" name="address" class="c-input" placeholder="江ノ島水族館付近">
             </div>
+            <input type="text" id="flatpickr">
+
         </div>
     </div>
 </div>
@@ -60,5 +62,7 @@
             availableTags: ['php', 'ruby', 'react', 'reactNative', 'laravel']
         });
     });
+    // flatpickr("#flatpickr", {});
+
 </script>
 @endsection

@@ -16,6 +16,8 @@ require('./image')
 
 require('./tag');
 
+require('./calendar');
+
 
 
 
