@@ -45,7 +45,12 @@
                 </select>
                 <input type="text" name="address" class="c-input" placeholder="江ノ島水族館付近">
             </div>
-            <input type="text" id="flatpickr">
+            <div class="p-plan-create__calendar">
+                <h4>日付を登録</h4>
+                <p>プランを提供できる時間帯を設定してください（単発プランの場合は必須）
+                    時間帯を伴なわないプラン（月額で一ヶ月レンタルなど）は設定不要で、開始日をユーザーとチャットでやりとりして決めてください</p>
+                <input type="text" id="flatpickr">
+            </div>
 
         </div>
     </div>
@@ -63,6 +68,5 @@
         });
     });
     // flatpickr("#flatpickr", {});
-
 </script>
 @endsection
