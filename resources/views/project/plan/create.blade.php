@@ -48,25 +48,25 @@
             <div class="p-plan-create__calendar">
                 <h4>日付を登録</h4>
                 <p>プランを提供できる時間帯を設定してください（単発プランの場合は必須）</p>
-                <p>時間帯を伴なわないプラン（月額で一ヶ月レンタルなど）は設定不要で、開始日をユーザーとチャットでやりとりして決めてください</p>
+                <p>時間帯を伴なわないプラン（月額レンタルなど）は設定不要で、開始日をユーザーとチャットでやりとりして決めてください</p>
                 <!-- <input type="text" id="flatpickr"> -->
-                <table class="innerTable nowrap jscInnerTable" cellpadding="0" cellspacing="0">
+                <table class="c-calendar-table">
                     <thead>
-                        <tr>
-                            <th rowspan="2" class="weekPaging"><span class="arrowPagingWeekLOff">前の一週間</span></th>
-                            <th colspan="14" class="monthCell">2020年7月</th>
-                            <th rowspan="2" class="weekPaging"><a title="次の一週間"
-                                    class="arrowPagingWeekR jscCalNavi">次の一週間</a></th>
+                        <tr class="c-calendar-table__day-cell-header">
+                            <th rowspan="2" class=""><span class="arrowPagingWeekLOff"><</span></th>
+                            <th colspan="14" class="">2020年7月</th>
+                            <th rowspan="2" class=""><a title="次の一週間"
+                                    class="arrowPagingWeekR jscCalNavi">></a></th>
                         </tr>
-                        <tr class="dayCellContainer">
+                        <tr class="c-calendar-table__day-cell-container">
                             @for($i = now(); $i < now()->addDay(13); $i->addDay())
-                                <th class="dayCell">{{$i->day}} <br />{{$i->isoFormat('ddd')}}</th>
-                                @endfor
+                                <th class="c-calendar-table__day-cell">{{$i->day}} <br />{{$i->isoFormat('ddd')}}</th>
+                            @endfor
                         </tr>
                     </thead>
                     <tr>
                         <th>
-                            <table>
+                            <table class="c-calendar-table__time-line">
                                 <tr>
                                     <th class="timeCell timeSharpLine">08：00</th>
                                 </tr>
@@ -146,7 +146,7 @@
                         </th>
                         @for($i = now(); $i < now()->addDay(13); $i->addDay())
                             <th class="innerCol">
-                                <table cellpadding="0" cellspacing="0" class="moreInnerTable">
+                                <table class="c-calendar-table__more-inner-table">
                                     <tr>
                                         <td class="closeCell"><input name="agree" type="checkbox" value="{{$i->format('Y-m-d 08:00')}}"></td>
                                     </tr>
