@@ -42,7 +42,6 @@ class RegisterController extends Controller
     public function __construct(RegistrationService $registration_service)
     {
         $this->registration_service = $registration_service;
-        $this->middleware('guest');
     }
 
     /**

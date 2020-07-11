@@ -19,8 +19,17 @@
 
     &__title,
     &__photo,
-    &__body {
+    &__body,
+    &__calendar{
         margin-bottom: 25px;
+
+        span {
+            color: $accent_color;
+            font-size: 0.8rem;
+            display: inline-block;
+            line-height: 1.5;
+            margin-top: 3px;
+        }
 
         h4 {
             color: #000000;
@@ -98,6 +107,7 @@
     // todo::priceと重複しているので、上手く共通化したい(selectをcomponent化する)
     &__address {
         position: relative;
+        margin-bottom: 25px;
 
         h4 {
             color: #000000;
@@ -135,14 +145,8 @@
         }
     }
 
-    &__calendar {
-
-    
+    &__submit-box {
+        text-align: center;
     }
 
-    
-    &__calendar-table {
-        
-    }
-    
 }
