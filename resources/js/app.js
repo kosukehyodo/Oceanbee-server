@@ -10,19 +10,12 @@ require('./bootstrap');
 require('./slider');
 
 // input image
-require('./image')
+require('./image');
 
-// require('tag-it/css/jquery.tagit.css');
+require('./checked-inputtable');
 
 require('./tag');
 
-require('./calendar');
-
-
-
-
-// 地図
-// require('./map')
 
 window.Vue = require('vue');
 

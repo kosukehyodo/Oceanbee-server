@@ -18,7 +18,8 @@
                 <div class="p-plan-create__photo">
                     <h4>写真を掲載</h4>
                     <p>スマホやカメラを使って写真を撮りましょう。1枚以上の写真が必要です。</p>
-                    <input type="file" name="photo[]" id="js-photo" accept="image/*" multiple>
+                    <label>ファイルを選択<input type="file" name="photo[]" class="c-image" id="js-photo" accept="image/*"
+                            multiple></label>
                     <div id="js-img__output"></div>
                 </div>
                 <!-- <h4 class="p-plan-create__tag-title">ハッシュタグ</h4>
@@ -39,15 +40,24 @@
                 </div>
                 <div class="p-plan-create__price">
                     <h4>価格</h4>
-                    <select class="c-select" required>
-                        <option value="1">日額</option>
-                        <option value="2">月額</option>
-                    </select>
-                    <input type="text" name="price" class="c-input" placeholder="10,000">円
+                    <label>
+                        <input type="checkbox" name="check_daily_price" class="js-checkbox-daily-price c-checkbox"
+                            value="checked">
+                        日額
+                        <input type="text" name="daily_price" class="c-input js-daily-price" placeholder="1000">円
+
+                    </label>
+                    <label>
+                        <input type="checkbox" name="check_monthly_price" class="js-checkbox-monthly-price c-checkbox"
+                            value="checked">
+                        月額
+                        <input type="text" name="monthly_price" class="c-input js-monthly-price" placeholder="10000">円
+
+                    </label>
                 </div>
                 <div class="p-plan-create__address">
                     <h4>場所</h4>
-                    <select class="c-select" required>
+                    <select class="c-select" name="prefecture" required>
                         @foreach(config('prefecture') as $key => $area)
                         <option value="{{ $key }}">{{ $area }}</option>
                         @endforeach
@@ -258,7 +268,6 @@
 @endsection
 
 @section('bodyScript')
-<!-- todo::モジュール化して外部ファイルで呼び出したい（できなくて諦めた） -->
 <script type="text/javascript">
     // $(function() {
     //     $("#myTags").tagit({
@@ -267,6 +276,5 @@
     //         availableTags: ['php', 'ruby', 'react', 'reactNative', 'laravel']
     //     });
     // });
-
 </script>
 @endsection

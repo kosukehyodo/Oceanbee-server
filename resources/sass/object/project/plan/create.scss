@@ -3,6 +3,7 @@
     padding: 30px 152px;
 
     &__main {
+        padding: 30px 0;
         flex: 1 1 auto;
         margin-left: 40px;
         height: auto;
@@ -51,6 +52,14 @@
             width: 100%;
             padding: 10px;
         }
+
+        label {
+            color: $base_color;
+            background-color: $accent_color;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     }
 
     &__myImage {
@@ -85,7 +94,6 @@
     }
 
     &__price {
-        position: relative;
         margin-bottom: 25px;
 
         h4 {
@@ -93,22 +101,14 @@
             font-weight: $base_font_weight;
         }
 
-        ::after {
-            content: "";
-            width: 10px;
-            height: 10px;
-            position: absolute;
-            right: 89%;
-            top: 65%;
-            border-bottom: #333 2px solid;
-            border-right: #333 2px solid;
-            transform: rotate(45deg) translateY(-30%);
+        label:nth-child(3) {
+            margin-left: 40px;
         }
 
         input[type="text"] {
             height: 40px;
             padding: 5px 15px;
-            margin: 0 10px 0 20px;
+            margin: 0 5px 0 8px;
         }
     }
 
