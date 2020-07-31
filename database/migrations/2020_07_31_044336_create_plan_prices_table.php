@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlansTable extends Migration
+class CreatePlanPricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreatePlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('plans', function (Blueprint $table) {
+        Schema::create('plan_prices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->string('title');
-            $table->text('body')->comment('プランの内容');
-            $table->integer('category');
-            $table->integer('prefecture');
-            $table->text('address');
+            $table->integer('plan_id');
+            $table->tinyInteger('charge_id')->comment('課金プラン(日額:0、月額:1)。いったん仮');
+            $table->integer('price');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreatePlansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plans');
+        Schema::dropIfExists('plan_prices');
     }
 }

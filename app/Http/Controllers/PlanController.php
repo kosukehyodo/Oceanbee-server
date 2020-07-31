@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\PlanService;
 use Illuminate\Http\Request;
 
-class ServicePlanController extends Controller
+class PlanController extends Controller
 {
+    protected $plan_service;
+
+    public function __construct(PlanService $planService)
+    {
+        $this->plan_service = $planService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +42,7 @@ class ServicePlanController extends Controller
      */
     public function store(Request $request)
     {
-       dd($request->all());
+       $this->plan_service->register($request);
     }
 
     /**

@@ -36,5 +36,5 @@ Route::post('register', 'Auth\RegisterController@register')->name('register');
 
 Route::middleware('auth')->group(function () {
     Route::resource('mypage', 'MypageController', ['only' => ['index']]);
-    Route::resource('plan', 'ServicePlanController');
+    Route::resource('plan', 'PlanController');
 });

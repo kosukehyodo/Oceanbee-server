@@ -33,15 +33,16 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    protected $registration_service;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(RegistrationService $registration_service)
+    public function __construct(RegistrationService $registrationService)
     {
-        $this->registration_service = $registration_service;
+        $this->registration_service = $registrationService;
     }
 
     /**

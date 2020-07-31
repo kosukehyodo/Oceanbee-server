@@ -7,6 +7,7 @@
 /public/mix-manifest.json
 /storage/*.key
 /vendor
+.docker/minio/*
 .env
 .env.backup
 .phpunit.result.cache

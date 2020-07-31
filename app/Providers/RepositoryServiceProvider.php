@@ -17,6 +17,11 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Repositories\Contract\UserContract::class,
             \App\Repositories\EloquentUserRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\Contract\PlanContract::class,
+            \App\Repositories\EloquentPlanRepository::class
+        );
     }
 
     /**

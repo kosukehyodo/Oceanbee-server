@@ -27,12 +27,12 @@
                 <div class="p-plan-create__body">
                     <h4>プラン内容</h4>
                     <p>提供できる内容を記載しましょう。2000文字以内。</p>
-                    <textarea name="notes" rows="20" class="c-input"
+                    <textarea name="body" rows="20" class="c-input"
                         placeholder="etc はじまして！&#13;&#10;サーフィン教えます。"></textarea>
                 </div>
                 <div class="p-plan-create__category">
                     <h4>カテゴリー</h4>
-                    <select class="c-select__category" required>
+                    <select class="c-select__category" name="category" required>
                         <option value="1">サーフボード置場</option>
                         <option value="2">サーフボード</option>
                         <option value="3">ウェットスーツ</option>
