@@ -17,7 +17,7 @@ $(function () {
                         e.target.result +
                         '" />';
                     div.innerHTML +=
-                        '<textarea class="js-img__desc" placeholder="写真に説明を入れましょう"></textarea>';
+                        '<textarea class="js-img__desc" name="photo_body[]" placeholder="写真に説明を入れましょう"></textarea>';
                     document.getElementById("js-img__output").insertBefore(div, null);
                 };
             })(f);

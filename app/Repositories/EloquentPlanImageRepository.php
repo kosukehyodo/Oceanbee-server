@@ -22,10 +22,21 @@ class EloquentPlanImageRepository implements PlanImageContract
 
     public function persist(Request $request)
     {
+
+        $photos = $request->input('photo_body');
         $files = $request->file('photo');
-        foreach ($files as $file) {
+
+        $photoFiles = array_combine($photos, $files) ;
+
+        foreach ($photoFiles as $body => $file) {
+            $planImage = new PlanImage();
+
             $path = Storage::disk('s3')->putFile('plan', $file);
-            dd($path);
+            // dd(Storage::disk('s3')->url($path));
+            $planImage->path = $path;
+            $planImage->body = $body;
+            
+            $planImage->save();
         }
     }
 }
