@@ -5,7 +5,7 @@
 {{ Breadcrumbs::render('mypage') }}
 <div class="p-plan-create">
     @include('common.sidebar')
-    <form method="POST" action="{{ route('plan.store')}}">
+    <form method="POST" action="{{ route('plan.store')}}" enctype="multipart/form-data">
         @csrf
         <div class="p-plan-create__main">
             <h3 class="c-headline p-plan-create__headline">プランを作成する</h3>
