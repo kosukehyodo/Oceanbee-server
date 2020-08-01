@@ -10,5 +10,5 @@ use Illuminate\Http\Request;
  */
 interface PlanImageContract
 {
-    public function persist(Request $data);
+    public function register(Request $data, Object $plan);
 }

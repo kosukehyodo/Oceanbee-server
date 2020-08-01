@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Requests;
+namespace App\Http\Requests;
 
+use App\Rules\PricePlanNotNull;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreServicePlanReqeust extends FormRequest
+class StorePlanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +25,9 @@ class StoreServicePlanReqeust extends FormRequest
     public function rules()
     {
         return [
-            //
+            'check_price' => 'required',
+            // required_withでうまくいかなかっため、カスタムでルールで対応
+            'price' => new PricePlanNotNull()
         ];
     }
 }

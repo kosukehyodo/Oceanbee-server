@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class EloquentPlanImageRepository implements PlanImageContract
 {
@@ -20,23 +21,30 @@ class EloquentPlanImageRepository implements PlanImageContract
         $this->plan = $planImage;
     }
 
-    public function persist(Request $request)
+    public function register(Request $request, Object $plan)
     {
-
         $photos = $request->input('photo_body');
         $files = $request->file('photo');
 
         $photoFiles = array_combine($photos, $files) ;
 
-        foreach ($photoFiles as $body => $file) {
-            $planImage = new PlanImage();
+        DB::beginTransaction();
+        try {
+            foreach ($photoFiles as $body => $file) {
+                $planImage = new PlanImage();
 
-            $path = Storage::disk('s3')->putFile('plan', $file);
-            // dd(Storage::disk('s3')->url($path));
-            $planImage->path = $path;
-            $planImage->body = $body;
+                $path = Storage::disk('s3')->putFile('plan', $file);
+                // dd(Storage::disk('s3')->url($path));
+                $planImage->plan_id = $path->id;
+                $planImage->path = $path;
+                $planImage->body = $body;
             
-            $planImage->save();
+                $planImage->save();
+                DB::commit();
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            dd($e->getMessage());
         }
     }
 }

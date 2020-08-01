@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePlanRequest;
 use App\Services\PlanService;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class PlanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePlanRequest $request)
     {
        $this->plan_service->register($request);
     }

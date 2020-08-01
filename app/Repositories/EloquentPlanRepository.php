@@ -3,9 +3,6 @@
 namespace App\Repositories;
 
 use App\Models\Plan;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-
 use App\Repositories\Contract\PlanContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +16,7 @@ class EloquentPlanRepository implements PlanContract
         $this->plan = $plan;
     }
 
-    public function persist(Request $request)
+    public function register(Request $request)
     {
         DB::beginTransaction();
         try {
@@ -33,8 +30,10 @@ class EloquentPlanRepository implements PlanContract
             $plan->prefecture = $request->input('prefecture');
             $plan->address = $request->input('address');
             $plan->save();
-
+            
             DB::commit();
+
+            return $plan;
         } catch (\Exception $e) {
             DB::rollback();
             dd($e->getMessage());

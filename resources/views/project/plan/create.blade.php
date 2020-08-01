@@ -8,6 +8,11 @@
     <form method="POST" action="{{ route('plan.store')}}" enctype="multipart/form-data">
         @csrf
         <div class="p-plan-create__main">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
             <h3 class="c-headline p-plan-create__headline">プランを作成する</h3>
             <div class="p-plan-create__frame">
                 <div class="p-plan-create__title">
@@ -41,18 +46,16 @@
                 <div class="p-plan-create__price">
                     <h4>価格</h4>
                     <label>
-                        <input type="checkbox" name="check_daily_price" class="js-checkbox-daily-price c-checkbox"
-                            value="checked">
+                        <input type="checkbox" name="check_price[daily]" class="js-checkbox-daily-price c-checkbox"
+                            value="{{ Config::get('price')['charge_id']['daily'] }}">
                         日額
-                        <input type="text" name="daily_price" class="c-input js-daily-price" placeholder="1000">円
-
+                        <input type="text" name="price[daily]" class="c-input js-daily-price" placeholder="1000">円
                     </label>
                     <label>
-                        <input type="checkbox" name="check_monthly_price" class="js-checkbox-monthly-price c-checkbox"
-                            value="checked">
+                        <input type="checkbox" name="check_price[monthly]" class="js-checkbox-monthly-price c-checkbox"
+                            value="{{ Config::get('price')['charge_id']['monthly'] }}">
                         月額
-                        <input type="text" name="monthly_price" class="c-input js-monthly-price" placeholder="10000">円
-
+                        <input type="text" name="price[monthly]" class="c-input js-monthly-price" placeholder="10000">円
                     </label>
                 </div>
                 <div class="p-plan-create__address">
