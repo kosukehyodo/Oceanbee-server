@@ -4,11 +4,10 @@
 @section('content')
 <div class="p-top">
     <div class="p-top__img" id="js-top-img">
-        <img src="{{ asset('/images/beach-yoga.jpg') }}" width="1000" height="300" alt="a">
-        <img src="{{ asset('/images/enoshima-coast.jpg') }}" width="1000" height="300" alt="b">
-        <img src="{{ asset('/images/surf1.jpg') }}" width="1000" height="300" alt="c">
+        <img src="{{ asset('/images/1477_594cc4f1adef7.jpg') }}" width="100%" height="500" alt="a">
     </div>
-    <div class="p-top__map">
+    <!-- <span>現地の人からレンタルしてもらって、海を楽しもう！</span> -->
+    <!-- <div class="p-top__map">
         <span>地図から探す</span>
         <div class="p-top__map-img">
             <img src="{{ asset('/images/nihonchizu-color.png') }}" usemap="#ImageMap" alt="" />
@@ -18,6 +17,18 @@
                     href="#" alt="" />
             </map>
         </div>
+    </div> -->
+    <div class="p-top__category">
+        <span>カテゴリーから探す</span>
+        <ul class="p-top__category-container">
+            <li class="p-top__category-item"><p>サーフボード置場を借りる</p><a href=""><img
+                        src="{{ asset('/images/bd-02-1.jpg') }}" width="300" height="180"></a></li>
+            <li class="p-top__category-item"><p>サーフボードを借りる</p><a href=""><img
+                        src="{{ asset('/images/a6e98c88fcd4ff1f9e0bdfcc77b7366a1.jpg') }}" width="300" height="180"></a>
+            </li>
+            <li class="p-top__category-item"><p>ウェットスーツを借りる</p><a href=""><img
+                        src="{{ asset('/images/6ac30efe.jpg') }}" width="300" height="180"></a></li>
+        </ul>
     </div>
     <div class="p-top__introduction">人気・インストラクター</div>
 </div>

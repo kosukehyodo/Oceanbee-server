@@ -7,7 +7,7 @@
 require('./bootstrap');
 
 // 画像自動スクロール
-require('./slider');
+// require('./slider');
 
 // input image
 require('./image');
