@@ -16,4 +16,13 @@ class Plan extends Model
         'address'
     ];
 
+    public function planImages()
+    {
+        return $this->hasMany(PlanImage::class);
+    }
+
+    public function planPrices()
+    {
+        return $this->hasMany(PlanPrice::class);
+    }
 }

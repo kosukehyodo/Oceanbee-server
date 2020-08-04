@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Contract\PlanContract;
 use Illuminate\Http\Request;
 
 class TopController extends Controller
 {
+    protected $plan_contract;
+
+    public function __construct(PlanContract $planContract)
+    {
+        $this->plan_contract = $planContract;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,10 @@ class TopController extends Controller
      */
     public function index()
     {
-        return view('project.top.index');
+        $plans = $this->plan_contract->get();
+        
+        return view('project.top.index')
+            ->with('plans', $plans);
     }
 
     /**

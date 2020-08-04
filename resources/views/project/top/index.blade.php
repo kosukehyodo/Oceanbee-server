@@ -21,15 +21,29 @@
     <div class="p-top__category">
         <span>カテゴリーから探す</span>
         <ul class="p-top__category-container">
-            <li class="p-top__category-item"><p>サーフボード置場を借りる</p><a href=""><img
-                        src="{{ asset('/images/bd-02-1.jpg') }}" width="300" height="180"></a></li>
-            <li class="p-top__category-item"><p>サーフボードを借りる</p><a href=""><img
-                        src="{{ asset('/images/a6e98c88fcd4ff1f9e0bdfcc77b7366a1.jpg') }}" width="300" height="180"></a>
+            <li class="p-top__category-item">
+                <p>サーフボード置場を借りる</p><a href=""><img src="{{ asset('/images/bd-02-1.jpg') }}" width="300"
+                        height="180"></a>
             </li>
-            <li class="p-top__category-item"><p>ウェットスーツを借りる</p><a href=""><img
-                        src="{{ asset('/images/6ac30efe.jpg') }}" width="300" height="180"></a></li>
+            <li class="p-top__category-item">
+                <p>サーフボードを借りる</p><a href=""><img src="{{ asset('/images/a6e98c88fcd4ff1f9e0bdfcc77b7366a1.jpg') }}"
+                        width="300" height="180"></a>
+            </li>
+            <li class="p-top__category-item">
+                <p>ウェットスーツを借りる</p><a href=""><img src="{{ asset('/images/6ac30efe.jpg') }}" width="300"
+                        height="180"></a>
+            </li>
         </ul>
     </div>
-    <div class="p-top__introduction">人気・インストラクター</div>
+    <div class="p-top__plan">
+        <span>最近投稿されたプラン</span>
+        <div class="p-top__plan-container">
+            <img src="{{ asset('storage/images/plan/5/hFmgrquc7vb11kfOzLGO8wbWOPfyMo5YOCOULy9s.jpeg') }}">
+
+            <!-- @foreach($plans as $plan)
+                
+            @endforeach -->
+        </div>
+    </div>
 </div>
 @endsection

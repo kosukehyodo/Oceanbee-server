@@ -48,10 +48,11 @@ return [
             'root' => storage_path('app'),
         ],
 
+        // 本来であればstorage/からpublicにシンボリックリンクを貼るべきであるができなくて諦めた
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'root' => 'images',
+            'url' => env('APP_URL').'/images',
             'visibility' => 'public',
         ],
 
@@ -63,6 +64,7 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'endpoint' => env('AWS_URL'),
             'use_path_style_endpoint' => env('AWS_PATH_STYLE_ENDPOINT', false),
+            'visibility' => 'public',
         ],
 
     ],

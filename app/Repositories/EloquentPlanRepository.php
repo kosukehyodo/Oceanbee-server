@@ -39,4 +39,9 @@ class EloquentPlanRepository implements PlanContract
             dd($e->getMessage());
         }
     }
+
+    public function get()
+    {
+       return $this->plan->with(['planImages', 'planPrices'])->orderBy('created_at', 'desc')->get();
+    }
 }

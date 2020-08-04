@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Helpers\UploadImageHelper;
 use App\Models\PlanImage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -33,9 +34,10 @@ class EloquentPlanImageRepository implements PlanImageContract
             foreach ($photoFiles as $body => $file) {
                 $planImage = new PlanImage();
 
-                $path = Storage::disk('s3')->putFile('plan', $file);
+                $path = UploadImageHelper::store($file, "plan/$plan->id");
+                // $path = $file->store('plan', 's3');
                 // dd(Storage::disk('s3')->url($path));
-                $planImage->plan_id = $path->id;
+                $planImage->plan_id = $plan->id;
                 $planImage->path = $path;
                 $planImage->body = $body;
             

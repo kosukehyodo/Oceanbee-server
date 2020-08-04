@@ -5,6 +5,7 @@
 /public/webfonts
 /public/storage
 /public/mix-manifest.json
+/public/images/plan
 /storage/*.key
 /vendor
 .docker/minio/*

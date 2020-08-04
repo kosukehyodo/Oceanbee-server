@@ -13,4 +13,9 @@ class PlanPrice extends Model
         'charge_id',
         'price'
     ];
+
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
 }

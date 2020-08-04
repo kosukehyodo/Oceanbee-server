@@ -11,4 +11,6 @@ use Illuminate\Http\Request;
 interface PlanContract
 {
     public function register(Request $data);
+
+    public function get();
 }
