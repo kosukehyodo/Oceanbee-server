@@ -14,7 +14,7 @@
     }
 
     &__category {
-        span {
+        h4 {
             text-align: center;
             display: inline-block;
             width: 100%;
@@ -48,7 +48,8 @@
 
     &__plan {
         height: 300px;
-        span {
+
+        h4 {
             text-align: center;
             display: inline-block;
             width: 100%;

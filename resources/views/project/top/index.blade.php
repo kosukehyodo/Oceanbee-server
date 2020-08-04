@@ -19,7 +19,7 @@
         </div>
     </div> -->
     <div class="p-top__category">
-        <span>カテゴリーから探す</span>
+        <h4>カテゴリーから探す</h4>
         <ul class="p-top__category-container">
             <li class="p-top__category-item">
                 <p>サーフボード置場を借りる</p><a href=""><img src="{{ asset('/images/bd-02-1.jpg') }}" width="300"
@@ -36,13 +36,14 @@
         </ul>
     </div>
     <div class="p-top__plan">
-        <span>最近投稿されたプラン</span>
+        <h4>最近投稿されたプラン</h4>
         <div class="p-top__plan-container">
-            <img src="{{ asset('storage/images/plan/5/hFmgrquc7vb11kfOzLGO8wbWOPfyMo5YOCOULy9s.jpeg') }}">
-
-            <!-- @foreach($plans as $plan)
-                
-            @endforeach -->
+            @foreach($plans as $plan)
+                <img src="{{ ImageHelper::createLink($plan->planImages[0]) }}" width="270" height="150">
+                @foreach($plan->planPrices as $planPrice)
+                    <span>{{ $planPrice->price }}円 / {{ Config::get('price')['plan'][$planPrice->charge_id]}}</span>
+                @endforeach
+            @endforeach
         </div>
     </div>
 </div>
