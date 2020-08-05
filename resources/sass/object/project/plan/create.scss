@@ -31,7 +31,7 @@
         }
 
         h4 {
-            color: #000000;
+            color: $text_color;
             font-weight: $base_font_weight;
             margin: 0;
         }
@@ -67,7 +67,7 @@
     }
 
     &__tag-title {
-        color: #000000;
+        color: $text_color;
         font-weight: $base_font_weight;
     }
 
@@ -76,7 +76,7 @@
         margin-bottom: 25px;
 
         h4 {
-            color: #000000;
+            color: $text_color;
             font-weight: $base_font_weight;
         }
 
@@ -97,7 +97,7 @@
         margin-bottom: 25px;
 
         h4 {
-            color: #000000;
+            color: $text_color;
             font-weight: $base_font_weight;
         }
 
@@ -118,7 +118,7 @@
         margin-bottom: 25px;
 
         h4 {
-            color: #000000;
+            color: $text_color;
             font-weight: $base_font_weight;
         }
 

@@ -13,7 +13,7 @@
                 <li>{{ $error }}</li>
                 @endforeach
             </ul>
-            <h3 class="c-headline p-plan-create__headline">プランを作成する</h3>
+            <h3 class="c-headline">プランを作成する</h3>
             <div class="p-plan-create__frame">
                 <div class="p-plan-create__title">
                     <h4>タイトル</h4>

@@ -60,6 +60,7 @@ $(function() {
 
     function initializeFiles() {
         var el = document.getElementById("js-img__output");
+        el.innerHTML = "";
         el.style.border = "none";   
         el.style.backgroundImage = "none";
     }
