@@ -2,7 +2,7 @@
 @section('title') サーフィンやろう、教えよう | Oceanbee
 @endsection
 @section('content')
-{{ Breadcrumbs::render('mypage') }}
+{{ Breadcrumbs::render('profile') }}
 <div class="p-plan-create">
     @include('common.sidebar')
     <form method="POST" action="{{ route('plan.store')}}" enctype="multipart/form-data">

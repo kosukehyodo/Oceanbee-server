@@ -6,7 +6,7 @@ Breadcrumbs::for('top', function ($trail) {
 });
 
 // Home > About
-Breadcrumbs::for('mypage', function ($trail) {
+Breadcrumbs::for('profile', function ($trail) {
     $trail->parent('top');
-    $trail->push('マイページ', route('mypage.index'));
+    $trail->push('マイページ', route('profile.index'));
 });

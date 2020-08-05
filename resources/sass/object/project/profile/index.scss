@@ -1,8 +1,8 @@
-.p-mypage {
+.p-profile {
     display: flex;
     padding: 30px 152px;
 
-    &__profile-image {
+    &__image {
         background-image: url(../images/no-image.jpg);
         background-repeat: no-repeat;
         height: 200px;
@@ -25,7 +25,7 @@
         padding: 20px 40px;
     }
 
-    &__profile {
+    &__image-file {
         margin-top: 20px;
 
         p {

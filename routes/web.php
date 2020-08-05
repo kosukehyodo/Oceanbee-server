@@ -35,6 +35,6 @@ Route::post('register', 'Auth\RegisterController@register')->name('register');
 // Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::middleware('auth')->group(function () {
-    Route::resource('mypage', 'MypageController', ['only' => ['index']]);
+    Route::resource('profile', 'ProfileController', ['only' => ['index']]);
     Route::resource('plan', 'PlanController');
 });

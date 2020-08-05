@@ -117,6 +117,6 @@ class RegisterController extends Controller
     {
         $this->registration_service->register($request->all(), $request);
         
-        return redirect('mypage');
+        return redirect('profile');
     }
 }
