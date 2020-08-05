@@ -2,11 +2,13 @@
 
 namespace App\Repositories;
 
+use App\Helpers\ImageHelper;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 use App\Models\User;
 use App\Repositories\Contract\UserContract;
+use Illuminate\Http\Request;
 
 class EloquentUserRepository implements UserContract
 {
@@ -27,5 +29,15 @@ class EloquentUserRepository implements UserContract
     public function first(string $token)
     {
         return $this->user->where('email_verify_token', $token)->first();
+    }
+
+    public function update(Request $request, int $id)
+    {
+        $path = ImageHelper::store($request->file('image'), "user/$id");
+
+        return $this->user->where('id', $id)->update([
+            'profile' => $request->input('profile'),
+            'image' => $path
+        ]);
     }
 }

@@ -15,6 +15,7 @@ class AddEmailVerifyTokenToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('email_verify_token')->nullable()->after('email');
+            // $table->timestamp('email_verified_at')->nullable();
             $table->tinyInteger('status')->after('password');
         });
     }

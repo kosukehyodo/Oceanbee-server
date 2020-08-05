@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\ProfileService;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+    protected $profile;
+
+    public function __construct(ProfileService $profileService)
+    {
+        $this->profile = $profileService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('project.profile.index');
+        $user = Auth::user();
+
+        return view('project.profile.index')
+            ->with('user', $user);
     }
 
     /**
@@ -69,7 +80,9 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->profile->register($request, $id);
+
+        return back();
     }
 
     /**
