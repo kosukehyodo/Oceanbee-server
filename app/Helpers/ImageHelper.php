@@ -17,11 +17,11 @@ class ImageHelper
         return $path;
     }
 
-    public static function createLink($planImage)
+    public static function createLink($value)
     {
         if (app()->isLocal()) {
             // development env
-            $url = asset("images/$planImage->path");
+            $url = asset("images/$value->image");
         } else {
             // production env
             // $path = $file->store($dir, 's3');

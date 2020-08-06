@@ -25,4 +25,9 @@ class Plan extends Model
     {
         return $this->hasMany(PlanPrice::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

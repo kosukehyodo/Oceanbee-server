@@ -16,7 +16,7 @@ class CreatePlanImagesTable extends Migration
         Schema::create('plan_images', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('plan_id');
-            $table->text('path');
+            $table->text('image');
             $table->text('body')->comment('画像の説明');
             $table->timestamps();
         });

@@ -2,7 +2,7 @@
         <nav class="l-sidebar__nav">
             <ul class="l-sidebar__nav-list">
                 <li>
-                    <a href="" class="l-sidebar__self">マイページ</a>
+                    <a href="/profile" class="l-sidebar__self">マイページ</a>
                 </li>
                 <li>
                     <a href="" class="l-sidebar__notification">お知らせ</a>

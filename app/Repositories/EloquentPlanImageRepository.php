@@ -38,7 +38,7 @@ class EloquentPlanImageRepository implements PlanImageContract
                 // $path = $file->store('plan', 's3');
                 // dd(Storage::disk('s3')->url($path));
                 $planImage->plan_id = $plan->id;
-                $planImage->path = $path;
+                $planImage->image = $path;
                 $planImage->body = $body;
             
                 $planImage->save();

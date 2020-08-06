@@ -58,5 +58,42 @@
             margin-top: 30px;
             font-size: 20px;
         }
+
+        &-image {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        &-container {
+            display: flex;
+            padding: 20px 40px;
+            justify-content: space-around;
+        }
+
+        &-item {
+            width: 270px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        &-price {
+            display: flex;
+
+            &-item:nth-child(2) {
+                margin-left: 20px;
+            }
+        }
+
+        hr {
+            margin: 3px 0px;
+        }
+
+        &-user {
+            text-align: right;
+
+            &-image {
+                max-width: 50px;
+            }
+        }
     }
 }

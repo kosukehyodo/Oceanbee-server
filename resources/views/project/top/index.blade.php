@@ -37,14 +37,25 @@
     </div>
     <div class="p-top__plan">
         <h4>最近投稿されたプラン</h4>
-        <div class="p-top__plan-container">
+        <ul class="p-top__plan-container">
             @foreach($plans as $plan)
-                <img src="{{ ImageHelper::createLink($plan->planImages[0]) }}" width="270" height="150">
-                @foreach($plan->planPrices as $planPrice)
-                    <span>{{ $planPrice->price }}円 / {{ Config::get('price')['plan'][$planPrice->charge_id]}}</span>
+            <li class="p-top__plan-item">
+                <img src="{{ ImageHelper::createLink($plan->planImages[0]) }}" class="p-top__plan-image" width="250" height="150">
+                <div class="p-top__plan-price">
+                    @foreach($plan->planPrices as $planPrice)
+                    <span class="p-top__plan-price-item">{{ $planPrice->price }}円/{{
+                        Config::get('price')['plan'][$planPrice->charge_id]}}</span>
+                    @endforeach
+                </div>
+                <hr>
+                <span>{{ $plan->title }}</span>
+                <div class="p-top__plan-user">
+                    <span>{{ $plan->user->name }}</span>
+                    <img src="{{ ImageHelper::createLink($plan->user) }}" class="p-top__plan-user-image">
+                </div>
                 @endforeach
-            @endforeach
-        </div>
+            </li>
+        </ul>
     </div>
 </div>
 @endsection

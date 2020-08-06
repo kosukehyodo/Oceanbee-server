@@ -44,6 +44,8 @@ class PlanController extends Controller
     public function store(StorePlanRequest $request)
     {
        $this->plan_service->register($request);
+
+       return back();
     }
 
     /**

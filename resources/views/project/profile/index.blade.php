@@ -36,12 +36,14 @@
             </div>
         </div>
 </div>
+@endsection
+
 @section('bodyScript')
 <script type="text/javascript">
     $(function() {
         const image = @json($user->image);
         if (image) {
-            $("#js-img__output").css('backgroundImage',`url("../images/${image}")`); 
+            $("#js-img__output").css('backgroundImage',`url("/images/${image}")`); 
         }
     });
 </script>

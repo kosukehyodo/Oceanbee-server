@@ -101,14 +101,20 @@
             font-weight: $base_font_weight;
         }
 
-        label:nth-child(3) {
-            margin-left: 40px;
-        }
-
         input[type="text"] {
             height: 40px;
             padding: 5px 15px;
             margin: 0 5px 0 8px;
+        }
+
+        p {
+            margin-top: 3px;
+            color: $accent_color;
+            font-size: 0.8rem;
+        }
+
+        &-monthly {
+            margin-left: 40px;
         }
     }
 

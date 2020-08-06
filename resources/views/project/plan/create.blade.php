@@ -45,13 +45,14 @@
                 </div>
                 <div class="p-plan-create__price">
                     <h4>価格</h4>
-                    <label>
+                    <p>日/月額どちらか必須です。</p>
+                    <label class="p-plan-create__price-daily">
                         <input type="checkbox" name="check_price[daily]" class="js-checkbox-daily-price c-checkbox"
                             value="{{ Config::get('price')['charge_id']['daily'] }}">
                         日額
                         <input type="text" name="price[daily]" class="c-input js-daily-price" placeholder="1000">円
                     </label>
-                    <label>
+                    <label class="p-plan-create__price-monthly">
                         <input type="checkbox" name="check_price[monthly]" class="js-checkbox-monthly-price c-checkbox"
                             value="{{ Config::get('price')['charge_id']['monthly'] }}">
                         月額
