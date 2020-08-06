@@ -40,7 +40,8 @@
         <ul class="p-top__plan-container">
             @foreach($plans as $plan)
             <li class="p-top__plan-item">
-                <img src="{{ ImageHelper::createLink($plan->planImages[0]) }}" class="p-top__plan-image" width="250" height="150">
+                <img src="{{ ImageHelper::createLink($plan->planImages[0]) }}" class="p-top__plan-image" width="250"
+                    height="150">
                 <div class="p-top__plan-price">
                     @foreach($plan->planPrices as $planPrice)
                     <span class="p-top__plan-price-item">{{ $planPrice->price }}円/{{
@@ -51,10 +52,10 @@
                 <span>{{ $plan->title }}</span>
                 <div class="p-top__plan-user">
                     <span>{{ $plan->user->name }}</span>
-                    <img src="{{ ImageHelper::createLink($plan->user) }}" class="p-top__plan-user-image">
+                    <img src="/images/{{ !empty($plan->user->image) ? $plan->user->image : 'no-image.jpg' }}" class="p-top__plan-user-image">
                 </div>
-                @endforeach
             </li>
+            @endforeach
         </ul>
     </div>
 </div>
