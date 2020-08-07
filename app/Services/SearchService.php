@@ -16,6 +16,6 @@ class SearchService
 
     public function searchByKeyword(string $keyword)
     {
-        $this->plan->search($keyword);
+        return $this->plan->search($keyword);
     }
 }

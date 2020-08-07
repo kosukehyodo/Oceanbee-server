@@ -32,7 +32,9 @@ class PlanController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->input('keyword') ?? null;
-        $this->search_service->searchByKeyword($keyword);
+        $plans = $this->search_service->searchByKeyword($keyword);
+
+        dd($plans);
     }
 
     /**

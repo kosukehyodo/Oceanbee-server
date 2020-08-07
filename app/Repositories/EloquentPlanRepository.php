@@ -47,6 +47,12 @@ class EloquentPlanRepository implements PlanContract
 
     public function search(string $keyword)
     {
-        
+        $plans = $this->plan->when($keyword, function ($query) use ($keyword){
+            $query->whereRaw("MATCH(title) AGAINST (? IN BOOLEAN MODE)", $keyword)
+                  ->orwhereRaw("MATCH(body) AGAINST (? IN BOOLEAN MODE)", $keyword)
+                  ->orwhereRaw("MATCH(address) AGAINST (? IN BOOLEAN MODE)", $keyword);
+        })->get();
+
+        return $plans;
     }
 }
