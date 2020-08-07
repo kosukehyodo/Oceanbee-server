@@ -12,5 +12,7 @@ interface PlanContract
 {
     public function register(Request $data);
 
-    public function get();
+    public function get(Int $limit = null);
+
+    public function search(string $keyword);
 }

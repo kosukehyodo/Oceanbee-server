@@ -40,8 +40,13 @@ class EloquentPlanRepository implements PlanContract
         }
     }
 
-    public function get()
+    public function get(Int $limit = null)
     {
-       return $this->plan->with(['planImages', 'planPrices'])->orderBy('created_at', 'desc')->get();
+       return $this->plan->with(['planImages', 'planPrices'])->orderBy('created_at', 'desc')->limit($limit)->get();
+    }
+
+    public function search(string $keyword)
+    {
+        
     }
 }

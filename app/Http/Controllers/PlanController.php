@@ -4,15 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePlanRequest;
 use App\Services\PlanService;
+use App\Services\SearchService;
 use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
     protected $plan_service;
+    protected $search_service;
 
-    public function __construct(PlanService $planService)
-    {
+    public function __construct(
+        PlanService $planService,
+        SearchService $searchService
+    ){
         $this->plan_service = $planService;
+        $this->search_service = $searchService;
+
+        // 認証middlewareの有効/無効化を管理
+        $this->middleware('auth')->only(['create', 'store']);
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
     /**
@@ -20,9 +29,10 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $keyword = $request->input('keyword') ?? null;
+        $this->search_service->searchByKeyword($keyword);
     }
 
     /**

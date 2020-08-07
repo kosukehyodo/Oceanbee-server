@@ -31,7 +31,5 @@ class PlanService
         $plan = $this->plan->register($request);
         $this->plan_image->register($request, $plan);
         $this->plan_price->register($request, $plan);
-
-
     }
 }

@@ -20,7 +20,7 @@ class TopController extends Controller
      */
     public function index()
     {
-        $plans = $this->plan_contract->get();
+        $plans = $this->plan_contract->get(config('query.limit.top'));
         
         return view('project.top.index')
             ->with('plans', $plans);

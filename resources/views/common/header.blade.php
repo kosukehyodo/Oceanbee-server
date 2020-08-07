@@ -6,8 +6,8 @@
                     <!-- <img src="" alt="Oceanbee" width="200" height="32"> -->
                     <span>Oceanbee</span>
                 </a>
-                <form action="#" class="l-header-content__search_box">
-                    <input type="text" class="c-input" placeholder="キーワードを入力" />
+                <form method="GET" action="/plan" class="l-header-content__search_box">
+                    <input type="text" name="keyword" class="c-input" size="47" placeholder="江ノ島などのキーワードで検索"/>
                     <button type='submit' class="c-search-button" value=''>
                         <i class="fas fa-search"></i>
                     </button>
