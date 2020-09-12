@@ -32,6 +32,7 @@
             "iOS 9.0",
             "Android 4.1"
         ],
+        "dotenv": "^8.2.0",
         "fibers": "^3.1.0",
         "flatpickr": "^4.6.3",
         "japan-map-js": "^1.0.1",

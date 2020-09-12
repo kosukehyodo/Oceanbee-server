@@ -3,12 +3,12 @@
 @endsection
 @section('content')
 {{ Breadcrumbs::render('profile') }}
-<div class="p-profile">
+<div class="l-mypage">
     @include('common.sidebar')
     <form method="POST" action="{{ url('profile/'.$user->id) }}" enctype="multipart/form-data">
         @method('PUT')
         @csrf
-        <div class="p-profile__main">
+        <div class="l-mypage__main">
             <h3 class="c-headline">プロフィール設定</h3>
             <div class="p-profile__frame">
                 <div class="p-profile__image" id="js-img__output">
@@ -20,8 +20,17 @@
                 </div>
                 <table class="p-profile__table">
                     <tr>
-                        <th>ユーザー名</th>
-                        <td><input name="name" type="text" class="c-input" value="{{ $user->name }}"></td>
+                        <th>名前</th>
+                        <td>
+                            <input name="last_name" type="text" class="c-input" value="{{ $user->last_name }}">
+                            <input name="first_name" type="text" class="c-input" value="{{ $user->first_name }}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>表示名</th>
+                        <td>
+                            <input name="display_name" type="text" class="c-input" value="{{ $user->display_name }}">
+                        </td>
                     </tr>
                     <tr>
                         <th>自己紹介</th>

@@ -1,0 +1,25 @@
+.tab-group {
+    display: flex;
+    justify-content: center;
+}
+.tab {
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    background-color: #eee;
+
+    a {
+        color: $text_color;
+        font-weight: $base_font_weight;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.tab.is-active {
+    border-top: 3px solid $main_color;
+    background-color: #fff;
+}
+

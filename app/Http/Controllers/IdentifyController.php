@@ -2,40 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePlanRequest;
-use App\Services\PlanService;
-use App\Services\SearchService;
+use App\Http\Requests\StoreIdentifyRequest;
+use App\Services\IdentificationService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Stripe\Stripe;
 
-class PlanController extends Controller
+class IdentifyController extends Controller
 {
-    protected $plan_service;
-    protected $search_service;
+    protected $identification_service;
 
     public function __construct(
-        PlanService $planService,
-        SearchService $searchService
-    ){
-        $this->plan_service = $planService;
-        $this->search_service = $searchService;
-
-        // 認証middlewareの有効/無効化を管理
-        $this->middleware('auth')->only(['create', 'store']);
-        $this->middleware('auth')->except(['index', 'show']);
+        IdentificationService $identificationService
+    ) {
+        $this->identification_service = $identificationService;
     }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $keyword = $request->input('keyword') ?? null;
-        $plans = $this->search_service->searchByKeyword($keyword);
+        $has_stripe_account = $this->identification_service->check();
 
-        return view('project.plan.index')
-            ->with('plans', $plans);
+        if ($has_stripe_account) {
+            $stripe_account = $this->identification_service->retrieve();
+        }
+
+        return view('project.identify.index')
+            ->with('stripe_account', $stripe_account ?? '');
     }
 
     /**
@@ -45,7 +41,7 @@ class PlanController extends Controller
      */
     public function create()
     {
-        return view('project.plan.create');
+        //
     }
 
     /**
@@ -54,11 +50,11 @@ class PlanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePlanRequest $request)
+    public function store(StoreIdentifyRequest $request)
     {
-       $this->plan_service->register($request);
-
-       return back();
+        $this->identification_service->register($request);
+        
+        return back();
     }
 
     /**

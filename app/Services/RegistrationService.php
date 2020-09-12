@@ -72,7 +72,9 @@ class RegistrationService
         $user = $this->user->first($data['email_verify_token']);
 
         try {
-            $user->name = $data['name'];
+            $user->last_name = $data['last_name'];
+            $user->first_name = $data['first_name'];
+            $user->display_name = $data['last_name'].$data['first_name'];
             $user->password = Hash::make($data['password']);
             $user->status = config('user.status.register');
             $user->save();

@@ -15,4 +15,8 @@ interface UserContract
     public function first(string $token);
     
     public function update(Request $request, Int $id);
+
+    public function find($id);
+
+    public function hasStripeAccount();
 }

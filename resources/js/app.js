@@ -14,8 +14,9 @@ require('./image');
 
 require('./checked-inputtable');
 
-require('./tag');
+// require('./tag');
 
+require('./payment');
 
 window.Vue = require('vue');
 

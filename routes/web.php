@@ -38,4 +38,7 @@ Route::resource('plan', 'PlanController');
 
 Route::middleware('auth')->group(function () {
     Route::resource('profile', 'ProfileController', ['only' => ['index', 'update']]);
+    Route::resource('identify', 'IdentifyController');
+    Route::resource('credit_card', 'CreditCardController');
+    Route::get('payment/history', 'PaymentController@history');
 });

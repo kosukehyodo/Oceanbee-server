@@ -9,8 +9,12 @@
             <h2 class="c-headline">本登録</h2>
             <ul class="p-register__list">
                 <li class="">
-                    <label for="name">ニックネーム</label>
-                    <input type="text" name="name" class="c-input" placeholder="オーシャビー太郎">
+                    <label for="name">名前</label>
+                    <input type="text" name="last_name" class="c-input" placeholder="田中" width="120px">
+                </li>
+                <li class="">
+                    <label for="name"></label>
+                    <input type="text" name="first_name" class="c-input" placeholder="太郎" width="120px">
                 </li>
                 <li class="email">
                     <label for="password">パスワード</label>
@@ -24,5 +28,4 @@
         </form>
     </div>
 </div>
-<p>登録フォーム </p>
 @endsection

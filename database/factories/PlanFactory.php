@@ -10,7 +10,7 @@ $factory->define(Plan::class, function (Faker $faker) {
         'title' => '江ノ島プラン',
         'body' => 'あああああああああああああああああああああ',
         'category' => $faker->randomElement([1, 2, 3], 1),
-        'prefecture' => $faker->numberBetween(1, 47),
+        'prefecture' => $faker->numberBetween(1, 31),
         'address' => $faker->address,
         'created_at' => now(),
         'updated_at' => now()

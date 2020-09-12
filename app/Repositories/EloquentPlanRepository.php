@@ -45,7 +45,7 @@ class EloquentPlanRepository implements PlanContract
        return $this->plan->with(['planImages', 'planPrices'])->orderBy('created_at', 'desc')->limit($limit)->get();
     }
 
-    public function search(string $keyword)
+    public function search(?string $keyword)
     {
         $plans = $this->plan->when($keyword, function ($query) use ($keyword){
             $query->whereRaw("MATCH(title) AGAINST (? IN BOOLEAN MODE)", $keyword)

@@ -14,5 +14,5 @@ interface PlanContract
 
     public function get(Int $limit = null);
 
-    public function search(string $keyword);
+    public function search(?string $keyword);
 }

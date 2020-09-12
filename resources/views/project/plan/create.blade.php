@@ -3,11 +3,11 @@
 @endsection
 @section('content')
 {{ Breadcrumbs::render('profile') }}
-<div class="p-plan-create">
+<div class="l-mypage">
     @include('common.sidebar')
     <form method="POST" action="{{ route('plan.store')}}" enctype="multipart/form-data">
         @csrf
-        <div class="p-plan-create__main">
+        <div class="l-mypage__main">
             <ul>
                 @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>

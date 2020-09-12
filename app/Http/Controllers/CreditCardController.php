@@ -2,26 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePlanRequest;
-use App\Services\PlanService;
-use App\Services\SearchService;
+use App\Services\CreditCardService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class PlanController extends Controller
+class CreditCardController extends Controller
 {
-    protected $plan_service;
-    protected $search_service;
+    protected $credit_card_service;
 
     public function __construct(
-        PlanService $planService,
-        SearchService $searchService
-    ){
-        $this->plan_service = $planService;
-        $this->search_service = $searchService;
-
-        // 認証middlewareの有効/無効化を管理
-        $this->middleware('auth')->only(['create', 'store']);
-        $this->middleware('auth')->except(['index', 'show']);
+        CreditCardService $creditCardService
+    ) {
+        $this->credit_card_service = $creditCardService;
     }
 
     /**
@@ -29,13 +21,9 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $keyword = $request->input('keyword') ?? null;
-        $plans = $this->search_service->searchByKeyword($keyword);
-
-        return view('project.plan.index')
-            ->with('plans', $plans);
+        //
     }
 
     /**
@@ -45,7 +33,10 @@ class PlanController extends Controller
      */
     public function create()
     {
-        return view('project.plan.create');
+        $user = Auth::user();
+        $card = $this->credit_card_service->retrieve($user);
+
+        return view('project.credit_card.create')->with('card', $card);
     }
 
     /**
@@ -54,11 +45,13 @@ class PlanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePlanRequest $request)
+    public function store(Request $request)
     {
-       $this->plan_service->register($request);
+        $user = Auth::user();
+        $token = $request->stripeToken;
+        $this->credit_card_service->register($token, $user);
 
-       return back();
+        return back();
     }
 
     /**

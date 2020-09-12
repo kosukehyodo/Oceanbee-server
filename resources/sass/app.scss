@@ -10,6 +10,7 @@
 @import "layout/l-header.scss";
 @import "layout/l-footer.scss";
 @import "layout/l-sidebar.scss";
+@import "layout/l-mypage.scss";
 
 // component(再利用可能)
 @import "object/component/c-breadcrumb.scss";
@@ -19,18 +20,25 @@
 @import "object/component/c-headline.scss";
 @import "object/component/c-image.scss";
 @import "object/component/c-tag.scss";
-@import "object/component/c-flatpickr.scss";
+// @import "object/component/c-flatpickr.scss";
 @import "object/component/c-calendar-table.scss";
 @import "object/component/c-select.scss";
 @import "object/component/c-checkbox.scss";
+@import "object/component/c-change-tab.scss";
 
 //project
 @import "object/project/top/index.scss";
+@import "object/project/plan/index.scss";
 @import "object/project/plan/create.scss";
+@import "object/project/plan/sidebar.scss";
 @import "object/project/profile/index.scss";
+@import "object/project/payment/history.scss";
 @import "object/project/pre-register.scss";
 @import "object/project/register.scss";
 @import "object/project/login.scss";
+@import "object/project/identify.scss";
+@import "object/project/credit_card/create.scss";
+
 
 
 // Font Awesome

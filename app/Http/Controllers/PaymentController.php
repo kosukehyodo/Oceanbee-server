@@ -2,40 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePlanRequest;
-use App\Services\PlanService;
-use App\Services\SearchService;
 use Illuminate\Http\Request;
 
-class PlanController extends Controller
+class PaymentController extends Controller
 {
-    protected $plan_service;
-    protected $search_service;
-
-    public function __construct(
-        PlanService $planService,
-        SearchService $searchService
-    ){
-        $this->plan_service = $planService;
-        $this->search_service = $searchService;
-
-        // 認証middlewareの有効/無効化を管理
-        $this->middleware('auth')->only(['create', 'store']);
-        $this->middleware('auth')->except(['index', 'show']);
-    }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $keyword = $request->input('keyword') ?? null;
-        $plans = $this->search_service->searchByKeyword($keyword);
-
-        return view('project.plan.index')
-            ->with('plans', $plans);
+        //
     }
 
     /**
@@ -45,7 +23,7 @@ class PlanController extends Controller
      */
     public function create()
     {
-        return view('project.plan.create');
+        //
     }
 
     /**
@@ -54,11 +32,9 @@ class PlanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePlanRequest $request)
+    public function store(Request $request)
     {
-       $this->plan_service->register($request);
-
-       return back();
+        //
     }
 
     /**
@@ -104,5 +80,10 @@ class PlanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function history()
+    {
+        return view('project.payment.history');
     }
 }

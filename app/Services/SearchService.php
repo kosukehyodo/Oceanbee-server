@@ -14,7 +14,7 @@ class SearchService
         $this->plan = $planContract;
     }
 
-    public function searchByKeyword(string $keyword)
+    public function searchByKeyword(?string $keyword)
     {
         return $this->plan->search($keyword);
     }

@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use App\Repositories\Contract\UserContract;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EloquentUserRepository implements UserContract
 {
@@ -39,5 +40,15 @@ class EloquentUserRepository implements UserContract
             'profile' => $request->input('profile'),
             'image' => $path
         ]);
+    }
+
+    public function find($id)
+    {
+        return $this->user->find($id);
+    }
+
+    public function hasStripeAccount()
+    {
+        return !is_null($this->user->find(Auth::id())->stripe_user_id);
     }
 }

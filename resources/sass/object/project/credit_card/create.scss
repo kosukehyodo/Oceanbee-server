@@ -1,0 +1,50 @@
+.p-card {
+    &__main {
+        flex: 1 1 auto;
+        margin-left: 40px;
+        height: auto;
+        background-color: white;
+        border-radius: 8px;
+        width: 800px;
+    }
+
+    &__content {
+        padding: 30px 0;
+    }
+
+    &__table {
+        margin: 0 auto;
+        width: 400px;
+        margin-top: 30px;
+
+        th {
+            width: 150px;
+        }
+        td {
+            padding: 12px 30px;
+        }
+
+        input[type="text"] {
+            height: 40px;
+            padding: 5px 15px;
+        }
+
+        span {
+            display: inline-block;
+            width: 28px;
+            text-align: center;
+        }
+    }
+
+    &__number {
+        letter-spacing: 0.4em;
+        font-weight: $base_font_weight;
+    }
+
+    &__submit-box {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+

@@ -1,0 +1,69 @@
+.p-plan-sidebar {
+    flex: 0 0 200px;
+    background-color: white;
+    border-radius: 15px;
+    height: 300px;
+
+    &__head {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: $base_font_weight;
+        color: $accent_color;
+    }
+
+    &__nav-list {
+        padding: 20px;
+
+        span {
+            color: $accent_color;
+            font-weight: $base_font_weight;
+        }
+    }
+
+    &__category {
+        position: relative;
+        margin-bottom: 10px;
+
+        ::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: 9%;
+            top: 62%;
+            border-bottom: #333 2px solid;
+            border-right: #333 2px solid;
+            transform: rotate(45deg) translateY(-30%);
+        }
+
+    }
+
+    &__prefecture {
+        position: relative;
+        display: block;
+
+        ::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: 45%;
+            top: 62%;
+            border-bottom: #333 2px solid;
+            border-right: #333 2px solid;
+            transform: rotate(45deg) translateY(-30%);
+        }
+
+    }
+    // &__nav {
+    //     &-list {
+    //         margin: 0;
+    //         a {
+    //             display: inline-block;
+    //             width: 100%;
+    //             padding: 10px 25px;
+    //             border: 1px solid $base_color;
+    //         }
+    //     }
+    // }
+}
