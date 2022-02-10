@@ -36,7 +36,7 @@
         "fibers": "^3.1.0",
         "flatpickr": "^4.6.3",
         "japan-map-js": "^1.0.1",
-        "node-sass": "^4.14.1",
+        "node-sass": "^7.0.0",
         "tag-it": "^2.0.0"
     }
 }
